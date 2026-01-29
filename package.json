@@ -2,11 +2,14 @@
   "name": "ready-4-ai",
   "version": "1.0.0",
   "type": "module",
-  "description": "Minimalne demo zapytań GET/POST do publicznych API",
+  "description": "ready-4-ai course",
   "scripts": {
-    "start": "node src/index.js"
+    "dev": "nodemon src/getPosts.js"
   },
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
