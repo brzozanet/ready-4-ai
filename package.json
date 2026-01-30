@@ -4,12 +4,13 @@
   "type": "module",
   "description": "ready-4-ai course",
   "scripts": {
-    "dev": "nodemon src/week-1/01-api/getFlights.js"
+    "dev": "tsx watch src/week-1/01-api-basic/getPosts.ts"
   },
   "dependencies": {
     "dotenv": "^17.2.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.11"
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   }
 }

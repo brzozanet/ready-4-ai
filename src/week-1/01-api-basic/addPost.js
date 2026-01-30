@@ -21,7 +21,7 @@
 //   console.log(post);
 // };
 
-// NOTE: request w zmiennej (czytelność / reuse / testy):
+// TODO: request w zmiennej (czytelność / reuse / testy):
 
 const addPost = async () => {
   const request = {
