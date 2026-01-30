@@ -1,5 +1,13 @@
 # API Basic - Instrukcja uruchamiania
 
+## Wymagania wstępne
+
+Przed uruchomieniem zainstaluj zależności:
+
+```bash
+npm install
+```
+
 ## Jak uruchomić pliki TypeScript
 
 ### Opcja 1: Modyfikacja skryptu `dev` w package.json
