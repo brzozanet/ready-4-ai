@@ -4,7 +4,7 @@
   "type": "module",
   "description": "ready-4-ai course",
   "scripts": {
-    "dev": "tsx watch src/week-1/01-api-basic/getPosts.ts"
+    "dev": "tsx watch src/week-1/01-api-basic/addPost.ts"
   },
   "dependencies": {
     "dotenv": "^17.2.3"
