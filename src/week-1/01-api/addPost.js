@@ -1,3 +1,5 @@
+// NOTE: Inline (proste, jednorazowe)
+
 // const addPost = async () => {
 //   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
 //     method: "POST",
@@ -10,10 +12,16 @@
 //       "Content-Type": "application/json; charset=UTF-8",
 //     },
 //   });
-
+//
+// if (!response.ok) {
+//   throw new Error(`Błąd HTTP! Status: ${response.status}`);
+// }
+//
 //   const post = await response.json();
 //   console.log(post);
 // };
+
+// NOTE: request w zmiennej (czytelność / reuse / testy):
 
 const addPost = async () => {
   const request = {
@@ -30,6 +38,10 @@ const addPost = async () => {
     "https://jsonplaceholder.typicode.com/posts",
     request,
   );
+
+  if (!response.ok) {
+    throw new Error(`Błąd HTTP! Status: ${response.status}`);
+  }
 
   const post = await response.json();
   console.log(post);

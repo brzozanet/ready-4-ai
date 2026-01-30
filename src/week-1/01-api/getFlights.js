@@ -7,6 +7,11 @@ const getFlights = async () => {
   const response = await fetch(
     `https://api.aviationstack.com/v1/flights?access_key=${AVIATIONSTACK_API_KEY}`,
   );
+
+  if (!response.ok) {
+    throw new Error(`Błąd HTTP! Status: ${response.status}`);
+  }
+
   const flights = await response.json();
   console.log(flights);
 };
