@@ -14,7 +14,7 @@ const getPosts = async (): Promise<void> => {
     const posts: Post[] = await response.json();
     console.log(posts);
   } catch (error) {
-    console.error(`Task failed successfully ;) ${error}`);
+    console.error(`Task failed successfully :) ${error}`);
   }
 };
 
