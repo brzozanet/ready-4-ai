@@ -4,7 +4,7 @@
   "type": "module",
   "description": "ready-4-ai course",
   "scripts": {
-    "dev": "nodemon src/getPosts.js"
+    "dev": "nodemon src/week-1/01-api/getPost.js"
   },
   "dependencies": {
     "dotenv": "^17.2.3"

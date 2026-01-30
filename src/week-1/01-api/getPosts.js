@@ -6,7 +6,7 @@
 
 const getPosts = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const posts = response.json();
+  const posts = await response.json();
   console.log(posts);
 };
 
