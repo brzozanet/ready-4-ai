@@ -15,7 +15,7 @@
 ### 1. Sklonuj repozytorium
 
 ```bash
-git clone https://github.com/tu-uzytkownik/ready-4-ai.git
+git clone https://github.com/brzozanet/ready-4-ai.git
 cd ready-4-ai
 ```
 
