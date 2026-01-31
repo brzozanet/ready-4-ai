@@ -1,23 +1,5 @@
 # API OpenAI - Instrukcja uruchamiania
 
-## Wymagania wstępne
-
-Przed uruchomieniem zainstaluj zależności:
-
-```bash
-npm install
-```
-
-## Konfiguracja API Key
-
-Utwórz plik `.env` w głównym katalogu projektu i dodaj swój klucz OpenAI:
-
-```
-OPENAI_API_KEY=sk-proj-xxxxxxxxxxxxx
-```
-
-**Ważne:** Nie commituj pliku `.env` - powinien być w `.gitignore`
-
 ## Jak działa kod
 
 Program wysyła jednorazowe zapytanie do modelu OpenAI i wypisuje odpowiedź w konsoli. Dzięki temu poznasz, jak wysyłać proste requesty do API OpenAI i odbierać odpowiedzi. 💡
