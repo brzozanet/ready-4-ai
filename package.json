@@ -4,10 +4,11 @@
   "type": "module",
   "description": "ready-4-ai course",
   "scripts": {
-    "dev": "tsx watch src/week-1/01-api-basic/getFlights.ts"
+    "dev": "tsx watch src/week-1/02-api-openai/getProgrammerJoke.ts"
   },
   "dependencies": {
-    "dotenv": "^17.2.3"
+    "dotenv": "^17.2.3",
+    "openai": "^6.17.0"
   },
   "devDependencies": {
     "@types/node": "^25.1.0",
