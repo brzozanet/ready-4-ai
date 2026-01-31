@@ -10,8 +10,6 @@ Program wysyła jednorazowe zapytanie do modelu OpenAI i wypisuje odpowiedź w k
 "Opowiedz losowy żart o programiście. Nie pytaj czy chcę kolejny"
 ```
 
-**Model:** `gpt-5-nano`
-
 **Zwracane:** Tekst odpowiedzi z żartem wyświetlony w konsoli
 
 ## Jak uruchomić plik TypeScript
