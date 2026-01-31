@@ -22,7 +22,7 @@ Przykłady:
 "dev": "tsx watch src/week-1/01-api-basic/addPost.ts"
 ```
 
-Następnie uruchom:
+Uruchom w głównym folderze projektu:
 
 ```bash
 npm run dev

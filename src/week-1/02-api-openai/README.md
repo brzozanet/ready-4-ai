@@ -16,10 +16,32 @@ Program wysyła jednorazowe zapytanie do modelu OpenAI i wypisuje odpowiedź w k
 
 ## Jak uruchomić plik TypeScript
 
-Uruchom:
+### Opcja 1: Modyfikacja skryptu `dev` w package.json
+
+Otwórz `package.json` i zmień linię `dev`:
+
+```json
+"scripts": {
+	"dev": "tsx watch src/week-1/02-api-openai/getProgrammerJoke.ts"
+}
+```
+
+Uruchom w głównym folderze projektu:
 
 ```bash
 npm run dev
+```
+
+### Opcja 2: Bezpośrednie uruchomienie (bez modyfikacji package.json)
+
+```bash
+npx tsx src/week-1/02-api-openai/getProgrammerJoke.ts
+```
+
+### Opcja 3: Watch mode dla konkretnego pliku
+
+```bash
+npx tsx watch src/week-1/02-api-openai/getProgrammerJoke.ts
 ```
 
 ## Troubleshooting

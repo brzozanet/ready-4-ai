@@ -8,10 +8,24 @@ Program uruchamia prostą pętlę rozmowy w konsoli, wysyła każdą wiadomość
 
 ## Jak uruchomić plik TypeScript
 
-Uruchom:
+### Opcja 1: Istniejący skrypt `start` w package.json
+
+Plik jest już skonfigurowany, wystarczy uruchomić:
 
 ```bash
 npm run start
+```
+
+### Opcja 2: Bezpośrednie uruchomienie (bez package.json)
+
+```bash
+npx tsx src/week-1/03-chatbot-basic/chatbot.ts
+```
+
+### Opcja 3: Watch mode dla konkretnego pliku
+
+```bash
+npx tsx watch src/week-1/03-chatbot-basic/chatbot.ts
 ```
 
 ## Jak zakończyć
