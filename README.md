@@ -1,4 +1,4 @@
-# ready-4-ai 🚀
+# Ready 4 AI 🚀
 
 Ćwiczenia i projekt praktyczny z kursu **Ready 4 AI** – nauka podstaw pracy z API OpenAI i tworzenia aplikacji ze sztuczną inteligencją.
 
