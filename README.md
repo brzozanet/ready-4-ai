@@ -47,4 +47,4 @@ Szczegółowe instrukcje znajdują się w `README.md` każdego folderu:
 
 - [API Basic](src/week-1/01-api-basic/README.md)
 - [API OpenAI](src/week-1/02-api-openai/README.md)
-- [Chatbot Basic](src/week-1/03-chatbot-basic/README.md)
+- [Chatbot](src/week-1/03-chatbot/README.md)

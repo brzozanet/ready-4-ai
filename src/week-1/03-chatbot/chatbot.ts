@@ -17,10 +17,13 @@ async function chatbot() {
   console.log(
     `
       🚀 Rozpocznij rozmowę zadając pytania
-      ⚠️  Czatbot nie pamięta historii rozmowy
+      💡 Czatbot pamięta całą historię rozmowy, aż jej nie zakończysz
       ❌ Aby zakończyć rozmowę, napisz "koniec"
     `,
   );
+
+  let previousResponseId: string | undefined = undefined;
+
   while (true) {
     const userInput = (await ask("Ty: ")).trim();
 
@@ -29,12 +32,18 @@ async function chatbot() {
       break;
     }
 
-    const response = await client.responses.create({
+    const response: OpenAI.Responses.Response = await client.responses.create({
       model: "gpt-5-nano",
       input: userInput,
+      // NOTE: previous_response_id łączy odpowiedzi w jedną historię rozmowy
+      previous_response_id: previousResponseId,
     });
 
     console.log(`AI: ${response.output_text}`);
+
+    // NOTE: zapamiętuje identyfikator bieżącej odpowiedzi, żeby w następnej iteracji
+    // przekazać go jako previous_response_id i zachować historię rozmowy
+    previousResponseId = response.id;
   }
 
   consoleReader.close();

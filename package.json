@@ -4,11 +4,11 @@
   "type": "module",
   "description": "ready-4-ai course",
   "scripts": {
-    "joke": "tsx src/week-1/02-api-openai/getProgrammerJoke.ts",
-    "chat:basic": "tsx src/week-1/03-chatbot-basic/chatbot.ts",
     "api:get-posts": "tsx src/week-1/01-api-basic/getPosts.ts",
     "api:add-post": "tsx src/week-1/01-api-basic/addPost.ts",
-    "api:get-flights": "tsx src/week-1/01-api-basic/getFlights.ts"
+    "api:get-flights": "tsx src/week-1/01-api-basic/getFlights.ts",
+    "joke": "tsx src/week-1/02-api-openai/getProgrammerJoke.ts",
+    "chat": "tsx src/week-1/03-chatbot/chatbot.ts"
   },
   "dependencies": {
     "dotenv": "^17.2.3",

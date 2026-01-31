@@ -1,10 +1,10 @@
-# Chatbot Basic - Instrukcja uruchamiania
+# Chatbot z historią - Instrukcja uruchamiania
 
 ## Jak działa kod
 
-Program uruchamia prostą pętlę rozmowy w konsoli, wysyła każdą wiadomość do modelu OpenAI i wypisuje odpowiedź. Dzięki temu możesz prowadzić podstawowy czat z AI w terminalu.
+Program uruchamia pętlę rozmowy w konsoli, wysyła każdą wiadomość do modelu OpenAI i wypisuje odpowiedź. Dzięki temu możesz prowadzić czat z AI w terminalu.
 
-⚠️ **Ważne:** Czat nie zapisuje historii rozmowy – każde pytanie jest wysyłane niezależnie, bez kontekstu poprzednich wiadomości.
+✅ **Czat zapisuje historię rozmowy** – każda kolejna wiadomość jest wysyłana z odniesieniem do poprzedniej odpowiedzi, dzięki czemu model utrzymuje kontekst całej konwersacji.
 
 ## Jak uruchomić plik TypeScript
 
@@ -13,13 +13,13 @@ Program uruchamia prostą pętlę rozmowy w konsoli, wysyła każdą wiadomość
 Uruchom w głównym folderze projektu:
 
 ```bash
-npm run chat:basic
+npm run chat
 ```
 
 ### Opcja 2: Bezpośrednie uruchomienie
 
 ```bash
-npx tsx src/week-1/03-chatbot-basic/chatbot.ts
+npx tsx src/week-1/03-chatbot/chatbot.ts
 ```
 
 ## Jak zakończyć
