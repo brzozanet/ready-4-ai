@@ -15,7 +15,11 @@ const ask = (question: string) =>
 
 async function chatbot() {
   console.log(
-    "Rozpocznij rozmowę zadając pytania. Aby zakończyć, napisz 'koniec'",
+    `
+      🚀 Rozpocznij rozmowę zadając pytania
+      ⚠️  Czatbot nie pamięta historii rozmowy
+      ❌ Aby zakończyć rozmowę, napisz "koniec"
+    `,
   );
   while (true) {
     const userInput = (await ask("Ty: ")).trim();

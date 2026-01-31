@@ -18,6 +18,12 @@ OPENAI_API_KEY=sk-proj-xxxxxxxxxxxxx
 
 **Ważne:** Nie commituj pliku `.env` - powinien być w `.gitignore`
 
+## Jak działa kod
+
+Program uruchamia prostą pętlę rozmowy w konsoli, wysyła każdą wiadomość do modelu OpenAI i wypisuje odpowiedź. Dzięki temu możesz prowadzić podstawowy czat z AI w terminalu.
+
+⚠️ **Ważne:** Czat nie zapisuje historii rozmowy – każde pytanie jest wysyłane niezależnie, bez kontekstu poprzednich wiadomości.
+
 ## Jak uruchomić plik TypeScript
 
 Uruchom:
