@@ -4,7 +4,7 @@
   "type": "module",
   "description": "ready-4-ai course",
   "scripts": {
-    "dev": "tsx watch src/week-1/02-api-openai/getProgrammerJoke.ts"
+    "start": "tsx src/week-1/03-chatbot-basic/chatbot.ts"
   },
   "dependencies": {
     "dotenv": "^17.2.3",
