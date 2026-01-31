@@ -1,6 +1,6 @@
 # ready-4-ai 🚀
 
-Ćwiczenia i projekt praktyczny z kursu **Ready 4 AI** – nauka podstaw pracy z API OpenAI i tworzenia aplikacji z sztuczną inteligencją.
+Ćwiczenia i projekt praktyczny z kursu **Ready 4 AI** – nauka podstaw pracy z API OpenAI i tworzenia aplikacji ze sztuczną inteligencją.
 
 ## 📋 Co zawiera to repozytorium
 
@@ -39,7 +39,7 @@ AVIATIONSTACK_API_KEY=xxxxxxxxxxxxx
 
 **⚠️ Ważne:**
 
-Plik `.env` utwórz wg wzorca `.env.example` który jest w repozytorium. Nigdy nie commituj `.env` do repozytorium! Plik `.env` jest już w`.gitignore`
+Plik `.env` utwórz wg wzorca `.env.example`, który jest w repozytorium. Nigdy nie commituj `.env` do repozytorium! Plik `.env` jest już w `.gitignore`.
 
 ## 📚 Jak uruchomić ćwiczenia
 
