@@ -37,7 +37,7 @@ OPENAI_API_KEY=sk-proj-xxxxxxxxxxxxx
 AVIATIONSTACK_API_KEY=xxxxxxxxxxxxx
 ```
 
-**⚠️ Ważne:** Plik `.env` jest już w `.gitignore` – nigdy nie commituj go do repozytorium!
+**⚠️ Ważne:** Plik `.env` utwórz wg wzorca `.env.example` który jest w repozytorium. Nigdy nie commituj `.env` do repozytorium! Plik `.env` jest już w`.gitignore`
 
 ## 📚 Jak uruchomić ćwiczenia
 
