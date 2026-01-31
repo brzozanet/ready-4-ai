@@ -18,41 +18,12 @@ OPENAI_API_KEY=sk-proj-xxxxxxxxxxxxx
 
 **Ważne:** Nie commituj pliku `.env` - powinien być w `.gitignore`
 
-## Jak uruchomić pliki TypeScript
+## Jak uruchomić plik TypeScript
 
-### Opcja 1: Modyfikacja skryptu `dev` w package.json
-
-Otwórz `package.json` i zmień linię `dev`:
-
-```json
-"scripts": {
-  "dev": "tsx watch src/week-1/02-api-openai/NAZWA_PLIKU.ts"
-}
-```
-
-Przykład:
-
-```json
-// Uruchomienie getProgrammerJoke.ts
-"dev": "tsx watch src/week-1/02-api-openai/getProgrammerJoke.ts"
-```
-
-Następnie uruchom:
+Uruchom:
 
 ```bash
 npm run dev
-```
-
-### Opcja 2: Bezpośrednie uruchomienie (bez modyfikacji package.json)
-
-```bash
-npx tsx src/week-1/02-api-openai/getProgrammerJoke.ts
-```
-
-### Opcja 3: Watch mode dla konkretnego pliku
-
-```bash
-npx tsx watch src/week-1/02-api-openai/getProgrammerJoke.ts
 ```
 
 ## Troubleshooting
