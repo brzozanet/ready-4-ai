@@ -7,7 +7,7 @@
 - **week-1/** – Podstawy pracy z API:
   - `01-api-basic/` – Proste requesty GET/POST do publicznych API
   - `02-api-openai/` – Pierwsza interakcja z OpenAI API
-  - `03-chatbot-basic/` – Interaktywny chatbot bez historii rozmowy
+  - `03-chatbot/` – Interaktywny chatbot zapamiętująy historie rozmowy
 - **week-2/, week-3/, week-4/** – Materiały do dalszych ćwiczeń
 
 ## 🔧 Wymagania wstępne
