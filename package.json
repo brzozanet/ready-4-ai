@@ -8,11 +8,14 @@
     "api:add-post": "tsx src/week-1/01-api-basic/addPost.ts",
     "api:get-flights": "tsx src/week-1/01-api-basic/getFlights.ts",
     "joke": "tsx src/week-1/02-api-openai/getProgrammerJoke.ts",
-    "chat": "tsx src/week-1/03-chatbot/chatbot.ts"
+    "chat": "tsx src/week-1/03-chatbot/chatbot.ts",
+    "imgen": "tsx src/week-1/04-replicate/imageGenerate.ts",
+    "imgen:watch": "tsx watch src/week-1/04-replicate/imageGenerate.ts"
   },
   "dependencies": {
     "dotenv": "^17.2.3",
-    "openai": "^6.17.0"
+    "openai": "^6.17.0",
+    "replicate": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^25.1.0",
