@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import readline from "node:readline";
 import Replicate from "replicate";
 import fs from "fs";
+import { writeFile } from "fs/promises";
 
 dotenv.config();
 
