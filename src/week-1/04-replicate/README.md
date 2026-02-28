@@ -1,10 +1,10 @@
-# Chatbot z historią - Instrukcja uruchamiania
+# Mikroaplikacja: Generowanie obrazów AI (Replicate)
 
-## Jak działa kod
+## Opis działania
 
-Program uruchamia pętlę rozmowy w konsoli, wysyła każdą wiadomość do modelu OpenAI i wypisuje odpowiedź. Dzięki temu możesz prowadzić czat z AI w terminalu.
+Ta mikroaplikacja pozwala generować obrazy na podstawie tekstowego opisu (promptu) z wykorzystaniem API Replicate. Użytkownik podaje opis, a zwraca aplikacja wygenerowany obraz, który jest zapysywany jako plik `output.jpg` w głównym folderze mikroaplikacji.
 
-✅ **Czat zapisuje historię rozmowy** – każda kolejna wiadomość jest wysyłana z odniesieniem do poprzedniej odpowiedzi, dzięki czemu model utrzymuje kontekst całej konwersacji.
+✅ **Obraz generowany jest przez AI** – aplikacja korzysta z wybranego modelu (np. Stable Diffusion) dostępnego na Replicate, by stworzyć grafikę na podstawie Twojego promptu.
 
 ## Jak uruchomić plik TypeScript
 
@@ -13,23 +13,23 @@ Program uruchamia pętlę rozmowy w konsoli, wysyła każdą wiadomość do mode
 Uruchom w głównym folderze projektu:
 
 ```bash
-npm run chat
+npm run imagen
 ```
 
 ### Opcja 2: Bezpośrednie uruchomienie
 
 ```bash
-npx tsx src/week-1/03-chatbot/chatbot.ts
+npx tsx src/week-1/04-replicate/imagen.ts
 ```
 
 ## Jak zakończyć
 
-Wpisz `koniec`, aby zakończyć działanie programu.
+Program kończy się automatycznie po wygenerowaniu obrazu lub w przypadku błędu.
 
 ## Troubleshooting
 
-Jeśli otrzymasz błąd autoryzacji - sprawdź czy:
+Jeśli otrzymasz błąd autoryzacji lub połączenia z API Replicate, sprawdź czy:
 
 - Plik `.env` istnieje w głównym katalogu projektu
-- Klucz `OPENAI_API_KEY` jest prawidłowy
+- Klucz `REPLICATE_API_TOKEN` jest prawidłowy
 - `dotenv.config()` jest uruchomiony na początku pliku
