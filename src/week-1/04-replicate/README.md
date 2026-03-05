@@ -1,35 +1,60 @@
-# Mikroaplikacja: Generowanie obrazów AI (Replicate)
+# Mikroaplikacja: Generowanie obrazu AI (Replicate Imagen)
 
 ## Opis działania
 
-Ta mikroaplikacja pozwala generować obrazy na podstawie tekstowego opisu (promptu) z wykorzystaniem API Replicate. Użytkownik podaje opis, a zwraca aplikacja wygenerowany obraz, który jest zapysywany jako plik `output.jpg` w głównym folderze mikroaplikacji.
+Ta mikroaplikacja generuje obraz na podstawie opisu podanego w terminalu, korzystając z modelu `google/imagen-4` przez SDK Replicate.
 
-✅ **Obraz generowany jest przez AI** – aplikacja korzysta z wybranego modelu (np. Stable Diffusion) dostępnego na Replicate, by stworzyć grafikę na podstawie Twojego promptu.
+Przeplyw programu:
 
-## Jak uruchomić plik TypeScript
+- pyta uzytkownika o prompt (`Napisz, jaki mam stworzyc obraz?`),
+- buduje obiekt `input` (m.in. `prompt`, `image_size`, `aspect_ratio`, `output_format`),
+- wywoluje `replicate.run("google/imagen-4", { input })`,
+- odbiera wynik jako `ReadableStream`,
+- czyta stream po chunkach i laczy je do bufora,
+- zapisuje plik lokalnie jako `output.png`,
+- wypisuje komunikat o poprawnym zapisie.
 
-### Opcja 1: Gotowy skrypt w package.json
+## Wymagania
 
-Uruchom w głównym folderze projektu:
+W pliku `.env` (w glownym katalogu projektu) ustaw:
+
+```env
+REPLICATE_API_TOKEN=twoj_klucz_api
+```
+
+## Jak uruchomic
+
+### Opcja 1: skrypt z `package.json`
 
 ```bash
 npm run imagen
 ```
 
-### Opcja 2: Bezpośrednie uruchomienie
+### Opcja 2: bezposrednio przez `tsx`
 
 ```bash
 npx tsx src/week-1/04-replicate/imagen.ts
 ```
 
-## Jak zakończyć
+## Jak zakonczyc
 
-Program kończy się automatycznie po wygenerowaniu obrazu lub w przypadku błędu.
+Program konczy sie automatycznie po zapisaniu pliku albo po bledzie.
+
+## Plik wyjsciowy
+
+Aktualny kod zapisuje obraz jako:
+
+```text
+output.png
+```
+
+Uwaga: w `input` ustawione jest `output_format: "jpg"`, ale zapis jest wykonywany do pliku `output.png`.
 
 ## Troubleshooting
 
-Jeśli otrzymasz błąd autoryzacji lub połączenia z API Replicate, sprawdź czy:
+Jesli pojawia sie blad, sprawdz:
 
-- Plik `.env` istnieje w głównym katalogu projektu
-- Klucz `REPLICATE_API_TOKEN` jest prawidłowy
-- `dotenv.config()` jest uruchomiony na początku pliku
+- czy `REPLICATE_API_TOKEN` jest ustawiony,
+- czy `dotenv.config()` jest wywolywany przed uzyciem klienta,
+- czy masz polaczenie z internetem,
+- czy model `google/imagen-4` jest dostepny dla Twojego konta.

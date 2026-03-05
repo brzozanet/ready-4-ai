@@ -1,35 +1,64 @@
-# Mikroaplikacja: Generowanie obrazów AI (Replicate)
+# Mikroaplikacja: Czat CLI z OpenRouter
 
 ## Opis działania
 
-Ta mikroaplikacja pozwala generować obrazy na podstawie tekstowego opisu (promptu) z wykorzystaniem API Replicate. Użytkownik podaje opis, a zwraca aplikacja wygenerowany obraz, który jest zapysywany jako plik `output.jpg` w głównym folderze mikroaplikacji.
+Ta mikroaplikacja uruchamia prosty czat w terminalu z wykorzystaniem SDK OpenRouter.
 
-✅ **Obraz generowany jest przez AI** – aplikacja korzysta z wybranego modelu (np. Stable Diffusion) dostępnego na Replicate, by stworzyć grafikę na podstawie Twojego promptu.
+Program:
 
-## Jak uruchomić plik TypeScript
+- pyta użytkownika o kolejne wiadomości (`Ty: ...`),
+- trzyma historię rozmowy w tablicy `messages`,
+- wysyła całą historię do modelu `openai/gpt-5.3-chat`,
+- odbiera odpowiedź w trybie stream (`stream: true`),
+- składa odpowiedź asystenta i dodaje ją do historii,
+- kończy działanie po wpisaniu `koniec`.
 
-### Opcja 1: Gotowy skrypt w package.json
+Dzięki temu model dostaje kontekst poprzednich tur rozmowy i odpowiada bardziej spójnie.
 
-Uruchom w głównym folderze projektu:
+## Wymagania
 
-```bash
-npm run imagen
+W pliku `.env` w głównym katalogu projektu ustaw:
+
+```env
+OPENROUTER_API_KEY=twoj_klucz_api
 ```
 
-### Opcja 2: Bezpośrednie uruchomienie
+## Jak uruchomić
+
+### Opcja 1: skrypt z `package.json`
 
 ```bash
-npx tsx src/week-1/04-replicate/imagen.ts
+npm run openchat
 ```
 
-## Jak zakończyć
+### Opcja 2: bezpośrednio przez `tsx`
 
-Program kończy się automatycznie po wygenerowaniu obrazu lub w przypadku błędu.
+```bash
+npx tsx src/week-1/05-openrouter/openchat.ts
+```
+
+## Jak zakończyć rozmowę
+
+Wpisz:
+
+```text
+koniec
+```
+
+## Jak działa pamięć kontekstu
+
+Po każdej turze aplikacja dopisuje do `messages`:
+
+- wiadomość użytkownika (`role: "user"`),
+- odpowiedź asystenta (`role: "assistant"`).
+
+Następny request wysyła całą tę tablicę, więc czat "pamięta" wcześniejszą rozmowę.
 
 ## Troubleshooting
 
-Jeśli otrzymasz błąd autoryzacji lub połączenia z API Replicate, sprawdź czy:
+Jeśli pojawią się błędy, sprawdź:
 
-- Plik `.env` istnieje w głównym katalogu projektu
-- Klucz `REPLICATE_API_TOKEN` jest prawidłowy
-- `dotenv.config()` jest uruchomiony na początku pliku
+- czy `OPENROUTER_API_KEY` jest ustawiony,
+- czy uruchamiasz w terminalu (nie w Debug Console),
+- czy payload do `openrouter.chat.send(...)` ma klucz `chatGenerationParams`,
+- czy model `openai/gpt-5.3-chat` jest dostępny na Twoim koncie.
