@@ -50,6 +50,6 @@ async function chatbot() {
 }
 
 chatbot().catch((error) => {
-  console.error("Błąd:", error);
+  console.error("App crashed succesfully 😆", error);
   consoleReader.close();
 });

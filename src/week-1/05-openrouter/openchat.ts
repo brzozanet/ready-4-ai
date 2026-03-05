@@ -2,6 +2,11 @@ import dotenv from "dotenv";
 import readline from "node:readline";
 import { OpenRouter } from "@openrouter/sdk";
 
+interface Message {
+  role: "user" | "assistant";
+  content: [{ type: "text"; text: string }];
+}
+
 dotenv.config();
 
 const consoleReader = readline.createInterface({
@@ -17,7 +22,7 @@ async function openchat() {
     apiKey: process.env.OPENROUTER_API_KEY,
   });
 
-  const messages = [];
+  const messages: Message[] = [];
 
   console.log(
     `
@@ -35,6 +40,7 @@ async function openchat() {
       break;
     }
 
+    // NOTE: dodaje pytanie użytkownika do historii rozmowy
     messages.push({
       role: "user",
       content: [{ type: "text", text: userInput }],
@@ -55,18 +61,22 @@ async function openchat() {
       if (part) {
         assistantReply = assistantReply + part;
         // assistantText += part;
-        console.log(`AI: ${part}`);
-        process.stdout.write(part);
+        // process.stdout.write(part);
       }
     }
+    console.log(`AI: ${assistantReply}`);
 
+    // NOTE: dodaje odpowiedź asystenta do historii rozmowy
     messages.push({
       role: "assistant",
-      content: { type: "text", text: assistantReply },
+      content: [{ type: "text", text: assistantReply }],
     });
   }
 
   consoleReader.close();
 }
 
-openchat();
+openchat().catch((error) => {
+  console.error("App crashed succesfully 😆", error);
+  consoleReader.close();
+});
