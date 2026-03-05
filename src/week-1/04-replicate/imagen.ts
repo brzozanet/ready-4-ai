@@ -58,7 +58,7 @@ async function createImageByAI() {
 }
 
 createImageByAI().catch((error) => {
-  console.log(`⚠️ App crashed succesfully: ${error}`);
+  console.error(`⚠️ App crashed succesfully: ${error}`);
   consoleReader.close();
 });
 
