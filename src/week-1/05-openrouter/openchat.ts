@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import readline from "node:readline";
+import { OpenRouter } from "@openrouter/sdk";
 
 dotenv.config();
 
@@ -8,19 +9,5 @@ const consoleReader = readline.createInterface({
   output: process.stdout,
 });
 
-async function askUserForPrompt(userPrompt: string): Promise<string> {
-  return new Promise((resolve) => {
-    consoleReader.question(userPrompt, (answer: string) => {
-      resolve(answer);
-    });
-  });
-}
-
-async function createImageByAI() {
-  consoleReader.close();
-}
-
-createImageByAI().catch((error) => {
-  console.log(`⚠️ App crashed succesfully: ${error}`);
-  consoleReader.close();
-});
+const ask = (question: string) =>
+  new Promise<string>((resolve) => consoleReader.question(question, resolve));
