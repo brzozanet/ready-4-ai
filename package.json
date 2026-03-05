@@ -11,7 +11,8 @@
     "chat": "tsx src/week-1/03-chatbot/chatbot.ts",
     "imagen": "tsx src/week-1/04-replicate/imagen.ts",
     "imagen:watch": "tsx watch src/week-1/04-replicate/imagen.ts",
-    "openchat": "tsx src/week-1/05-openrouter/openchat.ts"
+    "openchat": "tsx src/week-1/05-openrouter/openchat.ts",
+    "openchat:watch": "tsx watch src/week-1/05-openrouter/openchat.ts"
   },
   "dependencies": {
     "@openrouter/sdk": "^0.9.11",
