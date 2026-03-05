@@ -13,6 +13,12 @@ const ask = (question: string) =>
   new Promise<string>((resolve) => consoleReader.question(question, resolve));
 
 async function openchat() {
+  const openrouter = new OpenRouter({
+    apiKey: process.env.OPENROUTER_API_KEY,
+  });
+
+  const messages = [];
+
   console.log(
     `
       🚀 Rozpocznij rozmowę zadając pytania
@@ -23,24 +29,44 @@ async function openchat() {
 
   while (true) {
     const userInput = await ask("Ty: ");
-    const openrouter = new OpenRouter({
-      apiKey: process.env.OPENROUTER_API_KEY,
+
+    if (userInput.toLowerCase() === "koniec") {
+      console.log("Do zobaczenia!");
+      break;
+    }
+
+    messages.push({
+      role: "user",
+      content: [{ type: "text", text: userInput }],
     });
 
-    const embedding = await openrouter.embeddings.generate({
-      requestBody: {
-        model: "nvidia/llama-nemotron-embed-vl-1b-v2:free",
-        input: [
-          {
-            content: [{ type: "text", text: "What is in this image?" }],
-          },
-        ],
-        encodingFormat: "float",
+    const stream = await openrouter.chat.send({
+      chatGenerationParams: {
+        model: "openai/gpt-5.3-chat",
+        messages,
+        stream: true,
       },
     });
 
-    // console.log(embedding.data[0].embedding.slice(0, 5));
+    let assistantReply = "";
+
+    for await (const chunk of stream) {
+      const part = chunk.choices[0]?.delta?.content;
+      if (part) {
+        assistantReply = assistantReply + part;
+        // assistantText += part;
+        console.log(`AI: ${part}`);
+        process.stdout.write(part);
+      }
+    }
+
+    messages.push({
+      role: "assistant",
+      content: { type: "text", text: assistantReply },
+    });
   }
+
+  consoleReader.close();
 }
 
 openchat();
