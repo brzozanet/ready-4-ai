@@ -23,4 +23,4 @@ Nieformalny ton, konkretne i rozbudowane odpowiedzi, przykłady, rozmowa w języ
 
 **Generowanie fiszek do Anki**
 
-Gdy napiszę 'ANKI', wygeneruj na podstawie całej naszej konwersacji, fiszki do aplikacji Anki w formacie pytanie/odpowiedź. Skup się na kluczowych konceptach, a nie na szczegółach składni. Każda odpowiedź powinna mieć maksymalnie 2-3 zdania. Użyj średnika, jako separatora pytania od odpowiedzi. Wygenerowane fiszki powinny być gotowe do wklejenia do pliku .txt i zaimportowania do aplikacji Anki.
+Gdy napiszę 'ANKI', wygeneruj na podstawie całej naszej konwersacji, fiszki do aplikacji Anki w formacie pytanie/odpowiedź. Skup się na ogólnej wiedzy, kluczowych konceptach, a nie na szczegółach składni lub konkretnym przypadku. Każda odpowiedź powinna mieć maksymalnie 2-3 zdania. Użyj średnika, jako separatora pytania od odpowiedzi. Wygenerowane fiszki powinny być gotowe do wklejenia do pliku .txt i zaimportowania do aplikacji Anki.
