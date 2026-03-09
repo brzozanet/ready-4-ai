@@ -10,7 +10,6 @@
   - `03-chatbot/` – Interaktywny chatbot zapamiętujący historię rozmowy
   - `04-replicate/` – Generowanie obrazów AI z użyciem Replicate (Imagen)
   - `05-openrouter/` – Czat CLI z użyciem SDK OpenRouter
-- **week-2/, week-3/, week-4/** – Materiały do dalszych ćwiczeń
 
 - **week-2/** – AI jako asystent i mentor:
   - `01-code-review/` – Code review projektu Promptly Photo AI
