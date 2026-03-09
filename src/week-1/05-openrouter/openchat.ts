@@ -77,6 +77,6 @@ async function openchat() {
 }
 
 openchat().catch((error) => {
-  console.error("App crashed succesfully 😆", error);
+  console.error("App crashed successfully 😆", error);
   consoleReader.close();
 });
