@@ -14,6 +14,7 @@
 
 - **week-2/** – AI jako asystent i mentor:
   - `01-code-review/` – Code review projektu Promptly Photo AI
+  - `02-agents/` – Plik `AGENTS.md` definiuje zasady pracy agenta AI
 - **week-3/, week-4/** – Materiały do dalszych ćwiczeń
 
 ## 🔧 Wymagania wstępne
